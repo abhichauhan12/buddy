@@ -2,9 +2,7 @@ package com.example.buddy.ui.authentication
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -31,7 +29,7 @@ class Splash : Fragment(R.layout.fragment_splash){
         lifecycleScope.launchWhenStarted {
             delay(2000)
             if (isUserLogin) {
-                findNavController().navigate(R.id.action_splash_to_homeActivity)
+                findNavController().navigate(R.id.action_splash_to_homeViewpager2)
             } else {
                 findNavController().navigate(R.id.action_splash_to_signup)
             }

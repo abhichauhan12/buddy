@@ -1,6 +1,14 @@
 package com.example.buddy.domain.models
 
+
+//authentication
 data class User(
-    val email : String,
-    val password : String
+    var email : String,
+    var password : String
+)
+
+//firebase
+data class UserFirebase(
+    var username : String ="",
+    var age :Int = 0
 )

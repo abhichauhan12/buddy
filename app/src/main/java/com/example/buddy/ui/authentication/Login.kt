@@ -2,9 +2,7 @@ package com.example.buddy.ui.authentication
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -45,7 +43,7 @@ class Login : Fragment(R.layout.fragment_login) {
             user=user,
             onSuccess = {
                 Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_login_to_homeActivity)
+                findNavController().navigate(R.id.action_login_to_homeViewpager2)
             },
             onFailure = {
                 Toast.makeText(requireContext(), "User authentication failed", Toast.LENGTH_SHORT).show()

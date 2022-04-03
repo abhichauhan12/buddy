@@ -15,10 +15,9 @@
             app:popUpTo="@id/splash"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_splash_to_homeActivity"
-            app:destination="@id/homeActivity"
-            app:popUpTo="@id/splash"
-            app:popUpToInclusive="true" />
+            android:id="@+id/action_splash_to_homeViewpager2"
+            app:destination="@id/homeViewpager2"
+            app:popUpTo="@id/splash" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -30,8 +29,8 @@
             app:popUpTo="@id/login"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_login_to_homeActivity"
-            app:destination="@id/homeActivity"
+            android:id="@+id/action_login_to_homeViewpager2"
+            app:destination="@id/homeViewpager2"
             app:popUpTo="@id/login"
             app:popUpToInclusive="true" />
     </fragment>
@@ -45,9 +44,8 @@
             app:popUpTo="@id/signup"
             app:popUpToInclusive="true" />
     </fragment>
-    <activity
-        android:id="@+id/homeActivity"
-        android:name="com.example.buddy.ui.home.HomeActivity"
-        android:label="activity_home"
-        tools:layout="@layout/activity_home" />
+    <fragment
+        android:id="@+id/homeViewpager2"
+        android:name="com.example.buddy.ui.home.HomeViewpager"
+        android:label="HomeViewpager" />
 </navigation>

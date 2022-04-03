@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="postitem"
+            type="com.example.buddy.domain.models.Posts" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="#045C94"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+
+        >
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/user_image_feed_item" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/user_image_feed_item"
+            app:layout_constraintTop_toTopOf="@id/user_image_feed_item"
+            app:layout_constraintBottom_toBottomOf="@id/user_image_feed_item"
+            tools:text="user name"
+            android:textColor="@color/black"
+            android:id="@+id/username_feed_item"
+            android:layout_margin="8dp"
+            android:text="@{postitem.user.username}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timestamp_feed_item"
+            app:layout_constraintStart_toStartOf="@id/username_feed_item"
+            app:layout_constraintTop_toBottomOf="@id/username_feed_item"
+            android:textAppearance="?textAppearanceOverline"
+            tools:text="12 days ago"
+            />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="320dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/user_image_feed_item"
+            android:layout_margin="4dp"
+            tools:src="@mipmap/ic_launcher"
+            android:id="@+id/uploaded_image_feed_item"
+            loadImage="@{postitem.imageUrl}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/decription_feeds_item"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/uploaded_image_feed_item"
+            tools:text="test text "
+            android:layout_marginBottom="8dp"
+            android:text="@{postitem.description}"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+    </layout>

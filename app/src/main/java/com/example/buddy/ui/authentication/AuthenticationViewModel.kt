@@ -17,6 +17,8 @@ class AuthenticationViewModel(private val authenticationRepository: Authenticati
 
     fun isUserLogin()=authenticationRepository.isLogin()
 
+    fun logoutUser()=authenticationRepository.logout()
+
     class Factory(private val authenticationRepository: AuthenticationRepository): ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return AuthenticationViewModel(authenticationRepository) as T
